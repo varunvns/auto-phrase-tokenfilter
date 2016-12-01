@@ -17,8 +17,8 @@ public class TestAutoPhrasingTokenFilter extends TestCase {
     final String input = "what is my income tax refund this year now that my property tax is so high";
         
 
-    StringReader reader = new StringReader(input);
-    final WhitespaceTokenizer in = new WhitespaceTokenizer( reader );
+    final WhitespaceTokenizer in = new WhitespaceTokenizer(); 
+	in.setReader(new StringReader( input )); 
     AutoPhrasingTokenFilter aptf = new AutoPhrasingTokenFilter( in, phraseSets, false );
     aptf.setReplaceWhitespaceWith( new Character( '_' ) );
     CharTermAttribute term = aptf.addAttribute(CharTermAttribute.class);
@@ -60,8 +60,8 @@ public class TestAutoPhrasingTokenFilter extends TestCase {
         
     final String input = "what is my income tax refund this year now that my property tax is so high";
       
-    StringReader reader = new StringReader(input);
-    final WhitespaceTokenizer in = new WhitespaceTokenizer( reader );
+    final WhitespaceTokenizer in = new WhitespaceTokenizer(); 
+	in.setReader(new StringReader( input ));
         
     AutoPhrasingTokenFilter aptf = new AutoPhrasingTokenFilter( in, phraseSets, true );
     aptf.setReplaceWhitespaceWith( new Character( '_' ) );
@@ -114,8 +114,8 @@ public class TestAutoPhrasingTokenFilter extends TestCase {
         
     final String input = "new york city is great";
         
-    StringReader reader = new StringReader(input);
-    final WhitespaceTokenizer in = new WhitespaceTokenizer( reader );
+    final WhitespaceTokenizer in = new WhitespaceTokenizer(); 
+	in.setReader(new StringReader( input ));
         
     AutoPhrasingTokenFilter aptf = new AutoPhrasingTokenFilter( in, phraseSets, false );
     aptf.setReplaceWhitespaceWith( new Character( '_' ) );
@@ -136,8 +136,8 @@ public class TestAutoPhrasingTokenFilter extends TestCase {
         
     final String input = "new york city is great";
         
-    StringReader reader = new StringReader(input);
-    final WhitespaceTokenizer in = new WhitespaceTokenizer( reader );
+    final WhitespaceTokenizer in = new WhitespaceTokenizer(); 
+	in.setReader(new StringReader( input ));
       
     AutoPhrasingTokenFilter aptf = new AutoPhrasingTokenFilter( in, phraseSets, true );
     aptf.setReplaceWhitespaceWith( new Character( '_' ) );
@@ -166,8 +166,8 @@ public class TestAutoPhrasingTokenFilter extends TestCase {
         
     final String input = "the great city of new york";
         
-    StringReader reader = new StringReader(input);
-    final WhitespaceTokenizer in = new WhitespaceTokenizer( reader );
+    final WhitespaceTokenizer in = new WhitespaceTokenizer(); 
+	in.setReader(new StringReader( input ));
         
     AutoPhrasingTokenFilter aptf = new AutoPhrasingTokenFilter( in, phraseSets, true );
     aptf.setReplaceWhitespaceWith( new Character( '_' ) );
@@ -198,8 +198,8 @@ public class TestAutoPhrasingTokenFilter extends TestCase {
         
     final String input = "the great city of new york";
         
-    StringReader reader = new StringReader(input);
-    final WhitespaceTokenizer in = new WhitespaceTokenizer( reader );
+    final WhitespaceTokenizer in = new WhitespaceTokenizer(); 
+	in.setReader(new StringReader( input ));
         
     AutoPhrasingTokenFilter aptf = new AutoPhrasingTokenFilter( in, phraseSets, false );
     aptf.setReplaceWhitespaceWith( new Character( '_' ) );
@@ -219,9 +219,9 @@ public class TestAutoPhrasingTokenFilter extends TestCase {
         "big apple", "new york city", "property tax", "three word phrase"), false);
         
     final String input = "some new york";
-        
-    StringReader reader = new StringReader(input);
-    final WhitespaceTokenizer in = new WhitespaceTokenizer( reader );
+
+    final WhitespaceTokenizer in = new WhitespaceTokenizer(); 
+	in.setReader(new StringReader( input ));
         
     AutoPhrasingTokenFilter aptf = new AutoPhrasingTokenFilter( in, phraseSets, false );
     aptf.setReplaceWhitespaceWith( new Character( '_' ) );
